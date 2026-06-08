@@ -1,0 +1,40 @@
+/*Em uma eleição presidencial existem quatro candidatos. Os votos são informados através de
+códigos, obedecendo à seguinte codificação:
+• 1, 2, 3, 4 = voto para os respectivos candidatos;
+• 5 = voto nulo;
+• 6 = voto em branco.
+Elabore uma função em C que leia o código de cada voto. Calcule e escreva:
+• O total de votos para cada candidato;
+• O total de votos nulos;
+• O total de votos em branco.
+Como finalizador do conjunto de votos, utilize o valor 0.*/
+
+#include <stdio.h>
+void main() {
+    int voto;
+    int votos[5] = {0}; /* índices 0-3: candidatos, 4: brancos */
+    int nulos = 0, brancos = 0;
+
+    printf("Códigos: 1-4 = candidatos | 5 = nulo | 6 = branco | 0 = encerrar\n");
+
+    do {
+        printf("Digite o voto: ");
+        scanf("%d", &voto);
+
+        switch (voto) {
+            case 1: case 2: case 3: case 4:
+                votos[voto - 1]++;
+                break;
+            case 5: nulos++;   break;
+            case 6: brancos++; break;
+            case 0: break;
+            default: printf("Código inválido.\n");
+        }
+    } while (voto != 0);
+
+    printf("\n--- Resultado da Eleição ---\n");
+    for (int i = 0; i < 4; i++)
+        printf("Candidato %d: %d voto(s)\n", i + 1, votos[i]);
+    printf("Votos nulos:  %d\n", nulos);
+    printf("Votos brancos:%d\n", brancos);
+}
