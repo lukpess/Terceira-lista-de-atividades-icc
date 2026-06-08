@@ -1,0 +1,41 @@
+/*A prefeitura de Ozimandias fez uma pesquisa entre seus habitantes, coletando dados sobre o salário
+e o número de filhos. A prefeitura deseja saber:
+• a) A média do salário da população;
+• b) A média do número de filhos;
+• c) O maior salário;
+• d) O percentual de pessoas com salário até R 100,00.
+Escreva um programa em C que leia os dados de várias pessoas e compute os valores solicitados. O
+programa deve ser finalizado quando for inserido um salário negativo.*/
+
+#include <stdio.h>
+void main() {
+    float salario, somaSalario = 0, maiorSalario = -1;
+    int filhos, somaFilho = 0, totalPessoas = 0, pessoasAte100 = 0;
+
+    printf("Digite o seu salario (salario negativo para encerrar): ");
+    scanf("%f", &salario);
+
+    while (salario >= 0) {
+        printf("Digite a quantidade de filhos: ");
+        scanf("%d", &filhos);
+
+        somaSalario += salario;
+        somaFilho += filhos;
+        totalPessoas++;
+
+        if (salario > maiorSalario) maiorSalario = salario;
+        if (salario <= 100.0f) pessoasAte100++;
+
+        printf("Digite o próximo salario (negativo para encerrar): ");
+        scanf("%f", &salario);
+    }
+    if (totalPessoas == 0) {
+        printf("Nenhum dado inserido.\n");
+        return;
+    }
+    printf("\n--- Resultados ---\n");
+    printf("a) Media salarial:              R$ %.2f\n", somaSalario / totalPessoas);
+    printf("b) Media de filhos:             %.2f\n",   (float)somaFilho / totalPessoas);
+    printf("c) Maior salario:               R$ %.2f\n", maiorSalario);
+    printf("d) Percentual com salario <= R$100: %.1f%%\n", (float)pessoasAte100 / totalPessoas * 100.0f);
+}
