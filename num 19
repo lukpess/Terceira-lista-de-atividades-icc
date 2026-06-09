@@ -1,0 +1,21 @@
+/*Faça uma função em C que receba como argumento um número inteiro positivo qualquer e calcule
+e retorne a soma de todos os seus algarismos individuais. Exemplo: Se o número for 528, a função
+deve calcular 5 + 2 + 8 e retornar o valor 15. Utilize uma estrutura de repetição para isolar e somar
+cada dígito.*/
+
+#include <stdio.h>
+int somaDigitos(int n) {
+    int soma = 0;
+    if (n < 0) n = -n;
+    while (n > 0) {
+        soma += n % 10;
+        n /= 10;
+    }
+    return soma;
+}
+
+void main() {
+    int n;
+    printf("Digite um número inteiro positivo: "); scanf("%d", &n);
+    printf("Soma dos dígitos de %d: %d\n", n, somaDigitos(n));
+}
