@@ -1,0 +1,28 @@
+/*Escreva um programa em C que leia as notas de uma turma de alunos. O programa deve calcular e
+exibir a média aritmética das notas lidas e a quantidade de alunos aprovados (nota maior ou igual a
+7.0). O programa deve encerrar a leitura quando o usuário digitar a nota -1.*/
+
+void main() {
+    float nota, soma = 0;
+    int total = 0, aprovados = 0;
+    
+    printf("Digite as notas (-1 para encerrar):\n");
+
+    do {
+        printf("Nota: ");
+        scanf("%f", &nota);
+        if (nota < 0)
+            break;
+        soma += nota;
+        total++;
+        if (nota >= 7.0f)
+            aprovados++;
+    } while (1);
+
+    if (total == 0) {
+        printf("Nenhuma nota inserida.\n");
+        return;
+    }
+    printf("\nMédia da turma:   %.2f\n", soma / total);
+    printf("Alunos aprovados: %d de %d\n", aprovados, total);
+}
