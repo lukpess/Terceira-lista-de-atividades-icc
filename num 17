@@ -1,5 +1,8 @@
-double calcH(int n) {
-    double h = 0.0;
+/*Escreva uma função em C que calcule e retorne o valor de H , sendo H calculado pela série
+abaixo. O número de termos N deve ser passado como parâmetro para a função.*/
+
+float calcH(int n) {
+    float h = 0;
     for (int i = 1; i <= n; i++)
         h += 1.0 / i;
     return h;
@@ -7,7 +10,7 @@ double calcH(int n) {
  
 void main() {
     int n;
-    printf("Digite N (número de termos): "); scanf("%d", &n);
-    printf("H = %.6f\n", calcH(n));
+    printf("Digite N (número de termos): "); 
+    scanf("%d", &n);
+    printf("H = %.2f\n", calcH(n));
 }
- 
