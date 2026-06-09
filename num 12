@@ -1,0 +1,30 @@
+/*Construa um programa em C que leia uma quantidade N de números inteiros (onde N é fornecido
+pelo usuário no início). Ao final, o programa deve exibir:
+
+• A soma de todos os números pares digitados;
+• A média de todos os números ímpares digitados.*/
+
+#include <stdio.h>
+void main() {
+    int n, num;
+    long long somaPares = 0, somaImpares = 0;
+    int qtdImpares = 0;
+
+    printf("Quantos numeros? "); scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Numero %d: ", i + 1); scanf("%d", &num);
+        if (num % 2 == 0)
+            somaPares += num;
+        else {
+            somaImpares += num;
+            qtdImpares++;
+        }
+    }
+
+    printf("\nSoma dos pares:     %lld\n", somaPares);
+    if (qtdImpares > 0)
+        printf("Media dos impares:  %.2f\n", (float)somaImpares / qtdImpares);
+    else
+        printf("Nenhum numero impar digitado.\n");
+}
