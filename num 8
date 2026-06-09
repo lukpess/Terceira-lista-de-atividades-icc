@@ -1,0 +1,18 @@
+/*Escreva um programa em C que receba um número inteiro positivo
+do usuário e determine se ele é ou não um número primo
+(número divisível apenas por 1 e por ele mesmo).*/
+
+#include <stdio.h>
+
+int ehPrimo(int n) {
+    if (n < 2) return 0;
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0) return 0;
+    return 1;
+}
+void main() {
+    int n;
+    printf("Digite um numero: ");
+    scanf("%d", &n);
+    printf("%d %s primo.\n", n, ehPrimo(n) ? "É" : "NÃO é");
+}
