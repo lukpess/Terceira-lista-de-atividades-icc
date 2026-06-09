@@ -1,0 +1,20 @@
+/*Escreva uma função em C que receba como parâmetro um número inteiro positivo do usuário e,
+utilizando um laço de repetição e operações aritméticas (resto da divisão % e divisão inteira /),
+exiba o número com os seus dígitos invertidos. Exemplo: Se o usuário digitar 1234, o programa
+deve exibir 4321.*/
+
+void inverterNumero(int n) {
+    printf("Número invertido: ");
+    while (n > 0) {
+        printf("%d", n % 10);
+        n /= 10;
+    }
+    printf("\n");
+}
+ 
+void main() {
+    int n;
+    printf("Digite um número inteiro positivo: "); 
+    scanf("%d", &n);
+    inverterNumero(n);
+}
