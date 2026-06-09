@@ -1,0 +1,13 @@
+/*Escreva um programa em C que imprima uma tabela de conversão de graus Celsius para Fahrenheit.
+A tabela deve iniciar em 0°C e terminar em 100°C, com incrementos de 5 em 5 graus. A fórmula de
+conversão é: F = (C X 9/5) + 32.*/
+
+void main(){
+
+    printf("%-10s %-10s\n", "Celsius", "Fahrenheit");
+    printf("--------------------\n");
+    for (int c = 0; c <= 100; c += 5) {
+        float f = (c * 9.0f / 5.0f) + 32;
+        printf("%-10d %.2f\n", c, f);
+    }
+}
