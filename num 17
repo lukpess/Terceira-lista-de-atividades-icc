@@ -1,0 +1,13 @@
+double calcH(int n) {
+    double h = 0.0;
+    for (int i = 1; i <= n; i++)
+        h += 1.0 / i;
+    return h;
+}
+ 
+void main() {
+    int n;
+    printf("Digite N (número de termos): "); scanf("%d", &n);
+    printf("H = %.6f\n", calcH(n));
+}
+ 
