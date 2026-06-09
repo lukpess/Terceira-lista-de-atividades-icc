@@ -1,0 +1,19 @@
+/*Escreva um programa em C que leia 10 números reais inseridos pelo usuário. Ao final da leitura, o
+programa deve mostrar qual foi o maior número digitado e qual foi o menor número digitado.*/
+
+void main() {
+    float num, maior, menor;
+ 
+    printf("Número 1: "); scanf("%f", &num);
+    maior = menor = num;
+ 
+    for (int i = 2; i <= 10; i++) {
+        printf("Número %d: ", i); 
+        scanf("%f", &num);
+        if (num > maior) maior = num;
+        if (num < menor) menor = num;
+    }
+ 
+    printf("\nMaior: %.2f\n", maior);
+    printf("Menor: %.2f\n", menor);
+}
