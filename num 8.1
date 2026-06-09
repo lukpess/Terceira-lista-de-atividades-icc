@@ -3,7 +3,7 @@
  *um número primo e 0 caso contrário.*/
  
 #include <stdio.h>
-int ePrimo(int n) {
+int ehPrimo(int n) {
     if (n < 2) return 0;
     for (int i = 2; i * i <= n; i++)
         if (n % i == 0) return 0;
