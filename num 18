@@ -1,0 +1,20 @@
+/*Uma colônia de bactérias A dobra de tamanho a cada 3 horas. Outra colônia B triplica de
+tamanho a cada 4 horas. Sabendo que a colônia A começa com 1.000 bactérias e a colônia B
+começa com 200 bactérias, faça um programa em C que calcule e exiba quantas horas serão
+necessárias para que a população da colônia B ultrapasse a população da colônia A .*/
+
+void main(){
+   float tamA = 1000;
+   float tamB = 200;
+   int tempoHoras = 0;
+
+   while(tamA >= tamB){
+     tempoHoras++;
+     tamA = tamA * 2.0/3 + tamA;
+     tamB = tamB * 3.0/4 + tamB;
+    }
+    printf("Após %d hora(s):\n", horas);
+    printf("  Colônia A: %.0f bactérias\n", tamA);
+    printf("  Colônia B: %.0f bactérias\n", tamB);
+}
+
