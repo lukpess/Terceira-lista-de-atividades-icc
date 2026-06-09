@@ -1,0 +1,17 @@
+/*Faça uma função C que determine o fatorial de um número inteiro
+positivo passado como parâmetros para a função.
+Exemplo: 5! = 5 x 4 x 3 x 2 x 1 = 120.*/
+
+#include <stdio.h>
+    long long fatorial(int n){
+        long long fat = 1;
+        for (int i = 2; i <= n; i++)
+            fat *= i;
+return fat;
+}
+void main() {
+    int n;
+    printf("Digite um numero: ");
+    scanf("%d", &n);
+    printf("%d! = %lld\n", n, fatorial(n));
+}
